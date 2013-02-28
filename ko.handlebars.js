@@ -7,7 +7,7 @@
  */
 
 /**
-* The following section is documentation from Knockout v2 regarding how to create a template engine.
+* The following section is documentation from Knockout v2.2.1 regarding how to create a template engine.
 */
 // If you want to make a custom template engine,
 //
@@ -35,21 +35,19 @@
 //     If you don't want to allow that, you can set the property 'allowTemplateRewriting' to false (like ko.nativeTemplateEngine does)
 //     and then you don't need to override 'createJavaScriptEvaluatorBlock'.
 
-ko.mustacheTemplateEngine = function () { }
+ko.handlebarsTemplateEngine = function () { }
 
-ko.mustacheTemplateEngine.prototype = ko.utils.extend(new ko.templateEngine(), {
+ko.handlebarsTemplateEngine.prototype = ko.utils.extend(new ko.templateEngine(), {
 	
 	renderTemplateSource: function (templateSource, bindingContext, options) {
 		var data = bindingContext.$data;
-		var templateText = templateSource.text();		
-		var htmlResult = Mustache.to_html(templateText, data);
+		var template = templateSource.text();		
+		var html = Handlebars.compile(templateText)(data);
 		
-		return ko.utils.parseHtmlFragment(htmlResult);
+		return ko.utils.parseHtmlFragment(html);
 	},
 
-	allowTemplateRewriting: false,
-	
-	version: '0.9.0'
+	allowTemplateRewriting: false
 
 });
 
