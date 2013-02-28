@@ -16,19 +16,20 @@ Set default template engine to be used by Knockout. Make sure you do that **befo
 
 ##Example
 
-	<html>
-	<head>
-		<title>ko.handlebars.js example</title>
-		<script type="text/javascript" src="lib/handlebars.js"></script>
-		<script type="text/javascript" src="lib/knockout-2.2.1.js"></script>
-		<script type="text/javascript" src="ko.handlebars.js"></script>
-		<script>
-			ko.setTemplateEngine(new ko.handlebarsTemplateEngine());
-		</script>
-	</head>
+<!doctype html>
+<html>
+<head>
+	<title>ko.mustache.js example</title>
+	<script type="text/javascript" src="../lib/handlebars-1.0.0-rc.3.js"></script>
+	<script type="text/javascript" src="../lib/knockout-2.2.1.debug.js"></script>
+	<script type="text/javascript" src="../ko.handlebars.js"></script>
+	<script>
+		ko.setTemplateEngine(new ko.handlebarsTemplateEngine());
+	</script>
+</head>
 	<body>
 		<!-- place for rendered template -->
-		<div data-bind='template: "personTemplate"'></div>
+		<div data-bind="template: 'person-template'"></div>
 
 		<!-- handlebars template -->
 		<script id="person-template" type="text/x-handlebars-template">
@@ -48,8 +49,10 @@ Set default template engine to be used by Knockout. Make sure you do that **befo
 			ko.applyBindings(viewModel);
 		</script>
 	</body>
-	</html>
+</html>
 
+##Credit
+Credit to Marcin Wtorkowski for his work on [ko.mustache.js](https://github.com/WTK/ko.mustache.js), which forms the basis for this.
 
 ##Copyright
 
