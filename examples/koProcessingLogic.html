@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 <head>
-	<title>ko.mustache.js example</title>
-	<script type="text/javascript" src="../lib/mustache.js"></script>
-	<script type="text/javascript" src="../lib/knockout-2.1.0.debug.js"></script>
-	<script type="text/javascript" src="../ko.mustache.js"></script>
+	<title>ko.handlebars.js example</title>
+	<script type="text/javascript" src="../lib/handlebars-1.0.0-rc.3.js"></script>
+	<script type="text/javascript" src="../lib/knockout-2.2.1.debug.js"></script>
+	<script type="text/javascript" src="../ko.handlebars.js"></script>
 	<script>
-		ko.setTemplateEngine(new ko.mustacheTemplateEngine());
+		ko.setTemplateEngine(new ko.handlebarsTemplateEngine());
 	</script>
 </head>
 <body>
@@ -15,14 +15,15 @@
 		name: 'personTemplate', 
 		foreach: people, 
 		afterRender: afterRenderFunc
-	}">
-	</div>
-	<!-- mustache template -->
+	}"></div>
+
+	<!-- handlebars template -->
 	<script id='personTemplate' type='text/html'>
 		<div>
 			{{ name }} is <span data-bind="text: age"></span> <button data-bind="click: $parent.makeOlder">Make Older</button>
 		</div>
 	</script>
+	
 	<!-- knockout model and bindings -->
 	<script type='text/javascript'>
 		var viewModel = {

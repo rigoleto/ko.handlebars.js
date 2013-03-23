@@ -1,10 +1,13 @@
-*work in progress*
-
 #ko.handlebars.js
 
 ko.handlebars.js is a template engine for [knockoutjs](http://knockoutjs.com). It enables you to use [handlebars.js](https://github.com/wycats/handlebars.js/) template library in place of Knockout's native templating.
 
 Tested with Knockout v2.2.1 and handlebars.js v1.0.0-rc.3.
+
+##Todo
+
+* Add tests.
+* Allow for use of precompiled templates.
 
 ##Usage
 
@@ -19,7 +22,7 @@ Set default template engine to be used by Knockout. Make sure you do that **befo
 <!doctype html>
 <html>
 <head>
-	<title>ko.mustache.js example</title>
+	<title>ko.handlebars.js example</title>
 	<script type="text/javascript" src="../lib/handlebars-1.0.0-rc.3.js"></script>
 	<script type="text/javascript" src="../lib/knockout-2.2.1.debug.js"></script>
 	<script type="text/javascript" src="../ko.handlebars.js"></script>

@@ -41,8 +41,11 @@ ko.handlebarsTemplateEngine.prototype = ko.utils.extend(new ko.templateEngine(),
 	
 	renderTemplateSource: function (templateSource, bindingContext, options) {
 		var data = bindingContext.$data;
-		var template = templateSource.text();		
-		var html = Handlebars.compile(templateText)(data);
+		data.$parent = bindingContext.$parent;
+		data.$parents = bindingContext.$parents;
+		data.$root = bindingContext.$root;
+		var template = templateSource.text();
+		var html = Handlebars.compile(template)(data);
 		
 		return ko.utils.parseHtmlFragment(html);
 	},
